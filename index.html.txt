@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório de Fotos - Web</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+  h1 { text-align: center; }
+  form { display: flex; flex-direction: column; gap: 15px; }
+  input, select, button { padding: 8px; font-size: 16px; }
+  #preview img { width: 100px; margin: 5px; border: 1px solid #ccc; }
+  #preview div { display: inline-block; position: relative; }
+  .remove-btn { position: absolute; top: 0; right: 0; background: red; color: white; border: none; cursor: pointer; }
+</style>
+</head>
+<body>
+<h1>Envio de Fotos do Site</h1>
+
+<form id="uploadForm">
+  <label>ID do Site:</label>
+  <input type="text" id="siteId" required placeholder="Informe o ID do site">
+
+  <label>Seção:</label>
+  <select id="section" required>
+    <option value="">Selecione</option>
+    <option>FRENTE SITE</option>
+    <option>PORTÃO DE ACESSO - FRENTE</option>
+    <option>MEDIDOR DE ENERGIA DO SITE</option>
+    <option>POSTE DE ENTRADA</option>
+    <option>CAIXA DE PASSAGEM EL/FO</option>
+    <option>CAIXA DE PASSAGEM EL/FO (ABERTA)</option>
+    <option>CAIXA DE PASSAGEM TX</option>
+    <option>CAIXA DE PASSAGEM TX (ABERTA)</option>
+    <option>VISTA DAS VALAS DE ENCAMINHAMENTO</option>
+    <option>PONTO 1 - MALHA DE ATERRAMENTO</option>
+    <option>PONTO 2 - MALHA DE ATERRAMENTO</option>
+    <option>PONTO 3 - MALHA DE ATERRAMENTO</option>
+    <option>PONTO 4 - MALHA DE ATERRAMENTO</option>
+    <option>PONTO 5 - MALHA DE ATERRAMENTO</option>
+    <option>ENVELOPAMENTO DA LINHA DE DUTOS</option>
+    <option>BASE DE EQUIPAMENTOS</option>
+    <option>ESTEIRAMENTO HORIZONTAL</option>
+    <option>ATERRAMENTO - ESTEIRAMENTO HORIZONTAL</option>
+    <option>FOTO GERAIS - SITE FINALIZADO</option>
+  </select>
+
+  <label>Fotos (até 10):</label>
+  <input type="file" id="photos" multiple accept="image/*" capture="environment">
+  <div id="preview"></div>
+  <div>Fotos selecionadas: <span id="counter">0</span>/10</div>
+
+  <button type="submit">Enviar Relatório</button>
+</form>
+
+<div id="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
